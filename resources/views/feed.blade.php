@@ -14,7 +14,7 @@
                         $link = ((! empty($message->message_link)) ? $message->message_link : 'javascript:void(0);');
                     @endphp
 
-                    --><div class="grid__item one-sixth palm-one-whole social-blocks__item">
+                    --><div class="grid__item one-fifth palm-one-whole social-blocks__item">
                         <div class="social-content social-content--{{$message->message_type_name}} social-content__{{ $colors[array_rand($colors)] }}">
 
                             <p class="social-content--paragraph">
