@@ -5,38 +5,7 @@
     <div class="row">
 
         <div class="grid">
-
-            <div class="grid__item two-eighths palm-one-whole">
-
-                @foreach($matches as $match)
-
-                <ul class="matchboard">
-                   <li class="grid matchboard__match click-box">
-                        <div class="matchboard__box">
-                            <div class="grid__item one-fifth matchboard__date">
-                                <span class="matchboard__date--day">12</span>
-                                <span class="matchboard__date--month">Dec</span>
-                            </div><!--
-																--><div class="grid__item three-fifths matchboard__team">
-                                <span class="matchboard__team--home">KZ/Hiltex</span>
-                                <span class="matchboard__team--away">PKC/Hagero</span>
-                            </div><!--
-																--><div class="grid__item one-fifth matchboard__score">
-                                <div class="matchboard__score--box">
-                                    <span class="matchboard__score--home">12</span>
-                                    <span class="matchboard__score--away">11</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="click-box__link" href="" title=""><span class="click-box__body">Bekijk wedstrijd info</span></a>
-                    </li>
-                </ul>
-
-                @endforeach
-
-            </div><!--
-
-         --><div class="grid__item six-eighths palm-one-whole"><!--
+            <div class="grid__item one-whole lap-one-half palm-one-whole"><!--
 
                 @foreach($messages as $message)
 
@@ -45,7 +14,7 @@
                         $link = ((! empty($message->message_link)) ? $message->message_link : 'javascript:void(0);');
                     @endphp
 
-                    --><div class="grid__item one-quarter palm-one-whole social-blocks__item">
+                    --><div class="grid__item one-sixth palm-one-whole social-blocks__item">
                         <div class="social-content social-content--{{$message->message_type_name}} social-content__{{ $colors[array_rand($colors)] }}">
 
                             <p class="social-content--paragraph">

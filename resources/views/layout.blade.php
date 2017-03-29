@@ -13,7 +13,7 @@
             <a href="http://live.koogzaandijk.dev" title="">
                 <img class="site-logo" src="/images/logo.png" alt="" title="" />
             </a>
-            @yield('addmessage')
+            {{--@yield('addmessage')--}}
         </div>
         <div class="l-wrapper l-wrapper--content">
             @yield('content')
