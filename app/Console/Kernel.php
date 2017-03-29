@@ -27,8 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('fetch:twitter')->everyFiveMinutes();
-        $schedule->command('fetch:instagram')->everyFiveMinutes();
+        $schedule->command('fetch:facebook')->everyMinute();
+        $schedule->command('fetch:twitter')->everyMinute();
+        $schedule->command('fetch:instagram')->everyMinute();
     }
 
     /**
