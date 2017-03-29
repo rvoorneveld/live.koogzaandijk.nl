@@ -1,0 +1,97 @@
+/*
+* Input placeholder styles
+*/
+::-webkit-input-placeholder {
+    color: rgba(0,0,0,0.65);
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: black;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: black;
+}
+:-ms-input-placeholder {
+    color: black;
+}
+:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+:focus:-moz-placeholder {
+    /* Firefox 18- */
+    color: transparent;
+}
+:focus::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparent;
+}
+:focus:-ms-input-placeholder {
+    color: transparent;
+}
+.text-input,
+textarea {
+    vertical-align: middle;
+}
+.label--check-availability {
+    color: #fff;
+    @include font-size(18px, false);
+}
+.form-element {
+    display: block;
+    width: 100%;
+    padding: 3px;
+    @include transition;
+    &:hover,
+    &:focus {
+        @include vendor(box-shadow, 0 0 4px 1px rgba(0,0,0,0.25));
+    }
+    &:active {
+        @include vendor(box-shadow, inset 0 0 4px 1px rgba(0,0,0,0.25));
+    }
+    @include media-query(palm) {
+        max-width: 100% !important;
+    }
+}
+.form-element--xs {
+    max-width: 25px;
+}
+.form-element--s {
+    max-width: 50px;
+}
+.form-element--m {
+    max-width: 100px;
+}
+.form-element--l {
+    max-width: 200px;
+    @include media-query(palm) {
+        max-width: 100% !important;
+    }
+}
+.form-element--xl {
+    max-width: 300px;
+}
+.form-element-h {
+    display: inline-block;
+}
+
+.fieldset {
+    input,
+    select {
+        margin: auto;
+        max-width: 300px;
+        display: block;
+        width: 100%;
+    }
+    &--guide {
+        text-align: center;
+    }
+    *:not(:last-child) {
+        margin-bottom: 1em;
+    }
+
+    legend {
+        margin-bottom: 0!important;
+        padding: 0 1em;
+    }
+}

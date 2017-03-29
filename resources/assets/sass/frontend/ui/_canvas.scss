@@ -1,0 +1,9 @@
+.canvas
+{
+    position: relative;
+    width: 100%;
+  @include vendor(transition, margin .25s ease);  }
+.canvas.is-moved
+{
+	margin-left: 75vw;
+}

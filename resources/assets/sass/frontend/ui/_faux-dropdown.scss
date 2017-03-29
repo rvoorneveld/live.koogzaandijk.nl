@@ -1,0 +1,49 @@
+.faux-dropdown--switch
+{
+	float: right;
+	clear: both;
+	z-index: 10010;
+	width: 250px;
+	a{
+		@extend .cf;
+		color: #373737; //{theme}
+	}
+	&:hover
+	{
+		z-index: 10020;
+	}
+}
+.faux-dropdown--hotel
+{
+	margin-bottom: $half-spacing-unit;
+}
+	.faux-dropdown__select--switch
+	{
+		&:hover
+		{
+			@include vendor(border-radius,$base-border-radius);
+			//@include vendor(box-shadow, 0 0 3px 0 rgba(0,0,0,0.65));
+		}
+		.faux-dropdown__option:first-child
+		{
+			@include border-top-radius($base-border-radius);
+			@include border-bottom-radius($base-border-radius);
+			@include vendor(box-shadow, 0 0 3px 0 rgba(0,0,0,0.25) inset);
+		}
+		&:hover .faux-dropdown__option:first-child
+		{
+			@include border-bottom-radius(0px);
+			@include border-top-radius($base-border-radius);
+			@include vendor(box-shadow, none);
+		}
+		&:hover .faux-dropdown__option:last-child
+		{
+			@include border-bottom-radius($base-border-radius);
+		}
+	}
+	.faux-dropdown__option--switch
+	{
+		padding-left: 5px;
+		background: darken(#fff, 5%); //{theme} darkened version of .page-header__row--first in ui/_header.scss
+		color: #373737; //{theme}
+	}

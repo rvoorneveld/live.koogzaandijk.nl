@@ -1,0 +1,19 @@
+.cols
+{
+	@include vendor(column-count, 2);
+	//@include vendor(column-gap, 2);
+}
+	.cols__item
+	{
+		display: inline-block;
+		//margin-bottom: $base-spacing-unit;
+        vertical-align: top;
+		&:last-child
+		{
+			margin-bottom: 0;
+		}
+	}
+.cols2
+{
+	@include css-columns(3,auto,$base-spacing-unit,0);
+}

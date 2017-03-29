@@ -1,0 +1,83 @@
+.directory {
+
+  @extend .cf;
+
+  &__list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+    @include media-query(desk) {
+      float: left;
+      width: calc(50% - .5em);
+      &:nth-of-type(even) {
+        margin-left: 1em;
+      }
+    }
+
+
+  }
+
+  .delta {
+    margin-bottom: .25em!important;
+    font-weight: bold!important;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  .alpha, .beta, .gamma, .delta, .epsilon {
+    font-weight: 600;
+    line-height: 1.75;
+  }
+
+  &__list-wrapper {
+    margin-bottom: 1.5em;
+    @extend .cf;
+
+    @include media-query(desk) {
+    }
+  }
+
+  &__list-item {
+    display: inline-block;
+    line-height: 2;
+    font-size: .9rem;
+
+    &--hidden {
+      visibility: hidden;
+      position: absolute;
+      left: -999em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:first-of-type {
+      font-weight: 600;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: .25em;
+
+      // ARROW
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .25em;
+        border-style: solid;
+        border-width: .23em 0 .23em .36em;
+        border-color: transparent transparent transparent #333;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/*
+*  z-index: z("modal");
+*/
+$z-layers: (
+        "notice"  :           10000,
+        "modal"   :           9000,
+        "overlay" :           7000,
+        "submenu" :           6000,
+        "header"  :           5000,
+        "below"   :           1000
+);
+
+@function z($layer) {
+    @if not map-has-key($z-layers, $layer) {
+        @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+    }
+
+    @return map-get($z-layers, $layer);
+}

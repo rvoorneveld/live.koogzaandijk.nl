@@ -1,0 +1,9 @@
+.site-logo
+{
+    display:block;
+	max-width: 170px;
+    margin: 0 auto;
+    @include media-query(palm) {
+        max-width: 135px;
+    }
+}

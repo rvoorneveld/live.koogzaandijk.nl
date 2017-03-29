@@ -1,0 +1,35 @@
+.flexbox--promo
+{
+	width: auto;
+	margin-left: $base-spacing-unit * -1;
+	margin-bottom: $base-spacing-unit;
+}
+.flexbox__item--promo
+{
+	padding-left: $base-spacing-unit;
+	vertical-align: top;
+}
+
+.flexbox__item--title
+{
+
+}
+
+@include media-query(palm)
+{
+	.grid--destination-menu .flexbox__item
+	{
+		display: block;
+	}
+}
+
+.flexbox__item--hotelpage {
+    @include media-query(palm) {
+        display: block;
+        margin-bottom: 15px;
+    }
+    @include media-query(lap) {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
