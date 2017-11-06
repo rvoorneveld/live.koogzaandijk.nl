@@ -8,5 +8,6 @@ elixir(function(mix) {
         '../../../node_modules/vue-material/dist/vue-material.css',
         '../../../resources/assets/css/app.css',
     ],'public/assets/css/app.css')
-       .webpack('*', 'resources/assets/js/', 'public/assets/js/app.js');
+       .webpack('resources/assets/js/app.js', 'public/assets/js/app.js');
+
 });

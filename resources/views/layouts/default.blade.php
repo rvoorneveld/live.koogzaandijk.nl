@@ -15,21 +15,11 @@
 
         @yield('content')
 
+        <app-dialog></app-dialog>
+
     </div>
 
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.8.1/vue-material.js"></script>
-    <script>
-        Vue.use(VueMaterial);
-        Vue.material.registerTheme('default', {
-            primary: 'blue',
-            accent: 'white',
-        })
-        var App = new Vue({
-            el: '#app'
-        });
-    </script>
 </body>
 </html>
