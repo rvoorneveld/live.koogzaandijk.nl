@@ -49,39 +49,26 @@ class FetchFacebook extends Command
         if(isset($facebook) && is_object($facebook)) {
             foreach($facebook->feed->data as $post) {
 
-                if(! in_array($post->id,$foreign_keys)) {
-
-                    $media = '';
-
-                    if($post->type == 'photo') {
-
-                        // Get Headers
-                        $arrHeaders = get_headers("https://graph.facebook.com/".$post->object_id."/picture");
-
-                        if(! empty($arrHeaders) && is_array($arrHeaders)) {
-                            foreach($arrHeaders as $strHeader) {
-                                if(stristr($strHeader,"Location: ")) {
-                                    $media = str_replace("Location: ","",$strHeader);
-                                }
-                            }
-                        }
-                    }
+                if(! in_array($post->id,$foreign_keys,true)) {
 
                     $count++;
 
-                    $message = ((! empty($post->message)) ? $post->message : '');
-                    $link = ((! empty($post->link)) ? $post->link : '');
+                    if(! empty($post->message)) {
+                        
+                        $link = ((! empty($post->link)) ? $post->link : '');
 
-                    Message::create([
-                        'message_foreign_key' => $post->id,
-                        'message_type_id' => 6,
-                        'message_name' => $post->from->name,
-                        'message_title' => '',
-                        'message_content' => $message,
-                        'message_media' => $media,
-                        'message_link' => $link,
-                        'approved_at' => Carbon::createFromTimestamp(strtotime($post->created_time))->toDateTimeString()
-                    ]);
+                        Message::create([
+                            'message_foreign_key' => $post->id,
+                            'message_type_id' => 6,
+                            'message_name' => '',
+                            'message_title' => '',
+                            'message_content' => $post->message,
+                            'message_media' => '',
+                            'message_link' => $link,
+                            'approved_at' => Carbon::createFromTimestamp(strtotime($post->created_time))->toDateTimeString()
+                        ]);
+
+                    }
 
                 }
 
