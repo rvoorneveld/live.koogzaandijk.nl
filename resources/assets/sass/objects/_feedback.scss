@@ -1,0 +1,25 @@
+.feedback {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z(notice);
+    display: none;
+    width: 100%;
+    padding: $half-spacing-unit;
+    text-align: center;
+    //font-weight: bold;
+    color: #fff !important;
+    @include vendor(transition, all 0.3s);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.25);
+    font-size: 1.2rem;
+}
+.feedback--error {
+    background: #ff3f38 !important;
+}
+.feedback--succes {
+    background: #4db950 !important;
+}
+.feedback--notice {
+    background: #ffba37 !important;
+}

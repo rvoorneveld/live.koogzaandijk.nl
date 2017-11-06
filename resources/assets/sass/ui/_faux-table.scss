@@ -1,0 +1,50 @@
+/**
+* FAUX-TABLE
+*
+* Extend
+*
+*/
+	.faux-table__cell--awards,
+	.faux-table__cell--brand
+	{		
+		height: 1px;
+	}
+	.faux-table__cell--brand
+	{
+        height: 100%;
+        vertical-align: middle;
+        position:relative;
+        .l-wrapper
+        {
+          text-align: center;
+        }
+		//padding: $base-spacing-unit;
+	}
+	.faux-table__cell--awards
+	{
+		padding: $half-spacing-unit;
+		background: rgba(#fff,0.9);
+	}
+	.faux-table__cell--destination-dropdown
+	{
+		vertical-align: bottom;
+		text-align: left;
+        position:relative;
+	}
+    .faux-table__row:hover
+    {
+      .slider-arrow--right
+      {
+        right:0px;
+      }
+
+      .slider-arrow--left
+      {
+        left:0px;
+        //border-right: 1px solid black;
+      }
+      .maximage__page-dots
+      {
+        opacity: 1;
+      }
+    }

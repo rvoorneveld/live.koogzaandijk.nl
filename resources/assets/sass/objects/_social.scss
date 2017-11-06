@@ -1,0 +1,15 @@
+.btn.share {
+    margin: 0;
+    text-align: center;
+   white-space: normal;
+   line-height: 1.2;
+    svg {
+        margin-right: 5px;
+    }
+    path {
+        fill: $base-font-color;
+    }
+}
+.share--filter {
+    margin-bottom:$half-spacing-unit!important;
+}

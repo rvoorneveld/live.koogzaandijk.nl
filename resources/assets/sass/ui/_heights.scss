@@ -1,0 +1,83 @@
+.v-one-whole         { height:100%; }
+
+
+/**
+* Halves
+*/
+.v-one-half          { height:50%; }
+
+
+/**
+* Thirds
+*/
+.v-one-third         { height:33.333%; }
+.v-two-thirds        { height:66.666%; }
+
+
+/**
+* Quarters
+*/
+.v-one-quarter       { height:25%; }
+.v-two-quarters      { @extend .v-one-half; }
+.v-three-quarters    { height:75%; }
+
+
+/**
+* Fifths
+*/
+.v-one-fifth         { height:20%; }
+.v-two-fifths        { height:40%; }
+.v-three-fifths      { height:60%; }
+.v-four-fifths       { height:80%; }
+
+
+/**
+* Sixths
+*/
+.v-one-sixth         { height:16.666%; }
+.v-two-sixths        { @extend .v-one-third; }
+.v-three-sixths      { @extend .v-one-half; }
+.v-four-sixths       { @extend .v-two-thirds; }
+.v-five-sixths       { height:83.333%; }
+
+
+/**
+* Eighths
+*/
+.v-one-eighth        { height:12.5%; }
+.v-two-eighths       { @extend .v-one-quarter; }
+.v-three-eighths     { height:37.5%; }
+.v-four-eighths      { @extend .v-one-half; }
+.v-five-eighths      { height:62.5%; }
+.v-six-eighths       { @extend .v-three-quarters; }
+.v-seven-eighths     { height:87.5%; }
+
+
+/**
+* Tenths
+*/
+.v-one-tenth         { height:10%; }
+.v-two-tenths        { @extend .v-one-fifth; }
+.v-three-tenths      { height:30%; }
+.v-four-tenths       { @extend .v-two-fifths; }
+.v-five-tenths       { @extend .v-one-half; }
+.v-six-tenths        { @extend .v-three-fifths; }
+.v-seven-tenths      { height:70%; }
+.v-eight-tenths      { @extend .v-four-fifths; }
+.v-nine-tenths       { height:90%; }
+
+
+/**
+* Twelfths
+*/
+.v-one-twelfth       { height:8.333%; }
+.v-two-twelfths      { @extend .v-one-sixth; }
+.v-three-twelfths    { @extend .v-one-quarter; }
+.v-four-twelfths     { @extend .v-one-third; }
+.v-five-twelfths     { height:41.666% }
+.v-six-twelfths      { @extend .v-one-half; }
+.v-seven-twelfths    { height:58.333%; }
+.v-eight-twelfths    { @extend .v-two-thirds; }
+.v-nine-twelfths     { @extend .v-three-quarters; }
+.v-ten-twelfths      { @extend .v-five-sixths; }
+.v-eleven-twelfths   { height:91.666%; }

@@ -1,0 +1,40 @@
+.page-overlay
+{
+	display: none;
+	position: fixed;
+	z-index: z("modal");
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: $base-spacing-unit;
+    background: rgba(#f5f5f5,0.95);
+    color: #222222;
+  background: rgba(245,245,245,0.95);
+  overflow: auto;
+//  background-image: url("../images/bg.png");
+}
+.l-wrapper--page-overlay
+{
+//  background: rgba(245,245,245,0.95);
+}
+	.page-overlay__close
+	{
+		color: #000;
+        text-decoration: none;
+	}
+
+    .page-overlay__close--postcard
+    {
+        top: -15px;
+        right: -15px;
+    }
+
+    .sidebar_wrapper--open
+    {
+      -webkit-transform: translate3d(300px, 0, 0);
+      -moz-transform: translate3d(300px, 0, 0);
+      -o-transform: translate3d(300px, 0, 0);
+      transform: translate3d(300px, 0, 0);
+    }
+

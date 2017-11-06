@@ -1,0 +1,65 @@
+.vertical-split
+{
+	border-radius: $base-border-radius;
+}
+.vertical-split--hotel-block
+{
+	@include font-size(20px);
+	text-align: center;
+}
+.vertical-split--hotel-product
+{
+	
+}
+	.vertical-split__top
+	{
+		border-top-left-radius: $base-border-radius;
+		border-top-right-radius: $base-border-radius;
+	}
+	.vertical-split__bottom
+	{
+		border-bottom-left-radius: $base-border-radius;
+		border-bottom-right-radius: $base-border-radius;
+	}
+	.vertical-split__bottom--body,
+	.vertical-split__top--body
+	{
+		display: table;
+		width: 100%;
+	}
+	.vertical-split__bottom--media,
+	.vertical-split__top--media
+	{
+		overflow: hidden;
+		background: red; //{delete}
+		img
+		{
+
+		}
+	}
+	.vertical-split__bottom--media
+	{
+		position: relative;
+		img
+		{
+			border-bottom-left-radius: $base-border-radius;
+			border-bottom-right-radius: $base-border-radius;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.vertical-split__top--media
+	{
+		img
+		{
+			border-top-left-radius: $base-border-radius;
+			border-top-right-radius: $base-border-radius;
+		}
+	}
+    .vertical-split__title
+    {
+	    padding-top: $half-spacing-unit;
+	    padding-bottom: $half-spacing-unit;
+		text-transform: uppercase;
+    }

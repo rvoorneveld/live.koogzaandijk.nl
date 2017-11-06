@@ -1,0 +1,46 @@
+.btn
+{
+	background: none;
+	border-radius: $base-border-radius;
+  border: solid 1px;
+  color: #333333;
+  line-height: 1.2;
+  padding: .9em;
+    @include media-query(palm) {
+        font-size: 12px;
+	      padding: 1.2em;
+    }
+	&--main,
+	&:hover	 {
+	  @include vendor(transition, all 0.1s);
+      color:white;
+      background: $color-kz-blue;
+      border: solid 1px $color-kz-blue;
+	}
+    &--sub
+    {
+      background: $color_kz_grey;
+      border-color: $color-kz_grey;
+      color: $color-kz-black;
+      &:hover
+      {
+        background: $color-kz-black;
+        color: white;
+      }
+    }
+  a  {
+    text-decoration: none;
+  }
+  a:hover  {
+    text-decoration: none;
+  }
+}
+.btn--center
+{
+  display:block;
+  margin: 0 auto;
+  width: 250px;
+  text-align:center;
+  margin-top:$base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+}
