@@ -10713,14 +10713,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_material__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_material___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_material__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Dialog_vue__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Dialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Dialog_vue__);
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_material___default.a);
 
-
+window.Vue = __WEBPACK_IMPORTED_MODULE_0_vue___default.a;
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.material.registerTheme('default', {
     primary: 'blue',
@@ -10729,10 +10727,17 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.material.registerTheme('default', {
     background: 'white'
 });
 
-new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
-    components: { AppDialog: __WEBPACK_IMPORTED_MODULE_2__components_Dialog_vue___default.a }
+    data: {
+        openDialog: '',
+    },
+    components: {
+        appDialog: __webpack_require__(7),
+    },
 });
+
+vm.openDialog('manipulateMatchboardScoreBox');
 
 /***/ }),
 /* 3 */
@@ -11295,6 +11300,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function () { return ({
@@ -11339,7 +11347,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "open": _vm.onOpen,
       "close": _vm.onClose
     }
-  })], 1)
+  }), _vm._v(" "), _c('md-button', {
+    staticClass: "md-primary md-raised",
+    on: {
+      "click": function($event) {
+        _vm.openDialog('manipulateMatchboardScoreBox')
+      }
+    }
+  }, [_vm._v("Confirm")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

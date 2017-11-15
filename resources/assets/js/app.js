@@ -3,7 +3,7 @@ import VueMaterial from 'vue-material';
 
 Vue.use(VueMaterial);
 
-import AppDialog from './components/Dialog.vue';
+window.Vue = Vue;
 
 Vue.material.registerTheme('default', {
     primary: 'blue',
@@ -12,7 +12,14 @@ Vue.material.registerTheme('default', {
     background: 'white'
 });
 
-new Vue({
+var vm = new Vue({
     el: '#app',
-    components: { AppDialog }
+    data: {
+        openDialog: '',
+    },
+    components: {
+        appDialog: require('./components/Dialog.vue'),
+    },
 });
+
+vm.openDialog('manipulateMatchboardScoreBox');

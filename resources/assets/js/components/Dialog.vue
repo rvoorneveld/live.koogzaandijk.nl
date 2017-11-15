@@ -9,7 +9,10 @@
 	      @close="onClose"
 	      ref="manipulateMatchboardScoreBox">
 	    </md-dialog-confirm>
+
+	    <md-button class="md-primary md-raised" @click="openDialog('manipulateMatchboardScoreBox')">Confirm</md-button>
 	</div>
+
 </template>
 
 <script>
