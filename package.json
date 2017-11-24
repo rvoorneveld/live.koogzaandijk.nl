@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "devDependencies": {
-    "gulp": "3.9.1",
-    "vue": "2.5.3",
-    "vue-material": "0.8.1",
-    "webpack": "^3.8.1"
-  }
-}
