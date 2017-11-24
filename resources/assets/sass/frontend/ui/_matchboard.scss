@@ -43,6 +43,9 @@
     color:$color-kz_blue;
     border-top-left-radius: $base-border-radius*2;
     border-bottom-left-radius: $base-border-radius*2;
+    @include media-query(palm) {
+        font-size:1.3rem;
+    }
 }
 .matchboard__match--date
 {
@@ -59,6 +62,10 @@
         height:50%;
         font-size:2.5rem;
         display:block;
+        @include media-query(palm) {
+            padding-top:$base-spacing-unit +5;
+            font-size:2rem;
+        }
     }
     .matchboard__match--date__month
     {
@@ -67,6 +74,10 @@
         height:50%;
         font-size:1.5rem;
         display:block;
+        @include media-query(palm) {
+            padding-top: 5px;
+            font-size:1.2rem;
+        }
     }
 }
 .matchboard__match--teams
@@ -90,6 +101,9 @@
         display: block;
         height:50%;
         display:block;
+    }
+    @include media-query(palm) {
+        font-size:1.1rem;
     }
 }
 .matchboard__match--score
@@ -116,6 +130,9 @@
         display: block;
         height:50%;
         display:block;
+    }
+    @include media-query(palm) {
+        font-size:1.5rem;
     }
 }
 /*.matchboard {

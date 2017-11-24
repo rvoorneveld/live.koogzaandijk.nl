@@ -47,6 +47,9 @@
 	}
 
 .grid__item {
+	@include media-query(palm) {
+		padding-left:$half-spacing-unit;
+	}
    &--newsletter {
        @include media-query(palm) {
            border-right: 0;

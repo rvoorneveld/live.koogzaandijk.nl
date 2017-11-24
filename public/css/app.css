@@ -7934,6 +7934,12 @@ body .ui-tooltip {
 }
 
 @media only screen and (max-width: 749px) {
+  .grid__item {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 749px) {
   .grid__item--newsletter {
     border-right: 0;
     padding-right: 0;
@@ -11302,6 +11308,12 @@ a.activeSlide {
   border-bottom-left-radius: 10px;
 }
 
+@media only screen and (max-width: 749px) {
+  .matchboard__match--time {
+    font-size: 1.3rem;
+  }
+}
+
 .matchboard__match--date {
   position: relative;
   width: 15%;
@@ -11320,12 +11332,26 @@ a.activeSlide {
   display: block;
 }
 
+@media only screen and (max-width: 749px) {
+  .matchboard__match--date .matchboard__match--date__day {
+    padding-top: 35px;
+    font-size: 2rem;
+  }
+}
+
 .matchboard__match--date .matchboard__match--date__month {
   padding-top: 7.5px;
   display: block;
   height: 50%;
   font-size: 1.5rem;
   display: block;
+}
+
+@media only screen and (max-width: 749px) {
+  .matchboard__match--date .matchboard__match--date__month {
+    padding-top: 5px;
+    font-size: 1.2rem;
+  }
 }
 
 .matchboard__match--teams {
@@ -11353,6 +11379,12 @@ a.activeSlide {
   display: block;
 }
 
+@media only screen and (max-width: 749px) {
+  .matchboard__match--teams {
+    font-size: 1.1rem;
+  }
+}
+
 .matchboard__match--score {
   text-align: center;
   width: 20%;
@@ -11378,6 +11410,12 @@ a.activeSlide {
   display: block;
   height: 50%;
   display: block;
+}
+
+@media only screen and (max-width: 749px) {
+  .matchboard__match--score {
+    font-size: 1.5rem;
+  }
 }
 
 /*.matchboard {
