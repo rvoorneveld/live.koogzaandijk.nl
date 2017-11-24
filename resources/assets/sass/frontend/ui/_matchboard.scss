@@ -50,7 +50,7 @@
 .matchboard__match--date
 {
     position: relative;
-    width: 15%;
+    width: 17%;
     background:#ffffff;
     order: 2;
     color: $color_kz_blue;
@@ -82,10 +82,10 @@
 }
 .matchboard__match--teams
 {
-    width: 40%;
+    width: 38%;
     flex-grow: 2;
     order: 3;
-    font-size:1.5rem;
+    font-size:1.3rem;
     background: #ffffff;
     .matchboard__match--teams__home
     {

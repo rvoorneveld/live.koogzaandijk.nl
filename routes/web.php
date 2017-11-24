@@ -25,6 +25,8 @@ Route::get('/', function () {
         ->select('message.*','message_type.message_type_name','message_type.message_type_icon')
         ->whereNotNull('approved_at')
         ->orderBy('approved_at','desc')
+	    ->latest('message_id')
+	    ->take(40)
         ->get();
 
     $messages->map(function($message,$key) {
