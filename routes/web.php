@@ -12,17 +12,12 @@
 */
 
 use Illuminate\Support\Facades\Auth;
+use App\Match;
 
 Route::get('/', function () {
 
     // Get Matches
-    $matches = DB::table('matches')
-                ->select('matches.*')
-                ->where('year',\Carbon\Carbon::now()->year)
-                ->where('week',\Carbon\Carbon::now()->weekOfYear)
-                ->orderBy('date','asc')
-                ->orderBy('time','asc')
-                ->get();
+    $matches = (new Match)->getThisWeeksMatches();
 
     // Get Feed Data
     $messages = DB::table('message')

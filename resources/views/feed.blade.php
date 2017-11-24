@@ -6,9 +6,40 @@
 
         <div class="grid">
 
-            <div class="grid__item one-half lap-one-half palm-one-whole">
-matches
-            </div><!--
+            <div class="grid__item one-half lap-one-half palm-one-whole"><!--
+
+                @if (count($matches) > 0)
+                    @foreach($matches as $match)
+
+                        @php
+                            $day = ($objDate = \Carbon\Carbon::createFromFormat('Y-m-d',$match->date))->format('j');
+                            $month = strtoupper($objDate->format('M'));
+                        @endphp
+
+                        --><div class="grid__item one-half lap-one-half palm-one-whole">
+                            <div class="matchboard__match">
+                                <span class="matchboard__match--time">
+                                    <span class="matchboard__match--rotate">{{ $match->time }}</span>
+                                </span>
+                                    <span class="matchboard__match--date">
+                                    <span class="matchboard__match--date__day">{{ $day }}</span>
+                                    <span class="matchboard__match--date__month">{{ $month }}</span>
+                                </span>
+                                    <span class="matchboard__match--teams">
+                                    <span class="matchboard__match--teams__home">{{ $match->team_home_name }}</span>
+                                    <span class="matchboard__match--teams__away">{{ $match->team_away_name }}</span>
+                                </span>
+                                    <span class="matchboard__match--score">
+                                    <span class="matchboard__match--score__home">{{ $match->team_home_score ?? 0 }}</span>
+                                    <span class="matchboard__match--score__away">{{ $match->team_away_score ?? 0 }}</span>
+                                </span>
+                            </div>
+                        </div><!--
+
+                    @endforeach
+                @endif
+
+            --></div><!--
 
             --><div class="grid__item one-half lap-one-half palm-one-whole"><!--
 
