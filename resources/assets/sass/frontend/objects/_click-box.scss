@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    $CLICK-BOX
+\*------------------------------------*/
+/**
+*
+*/
+.click-box {
+    position: relative;
+    height: 100%;
+  text-decoration: none;
+}
+.click-box__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.click-box__body {
+    margin-left: -9999em;
+}
+.click-box__hover {
+    background: black;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  text-decoration: none !important;
+    p {
+//        display: none;
+        padding: 0 $half-spacing-unit;
+    }
+    img {
+        opacity: 0.8;
+        min-width: 100%;
+    }
+    h4 {
+        margin-bottom: 0px;
+    }
+    @include media-query(desk) {
+        &:hover {
+            transition: all 0.2s ease;
+            img {
+                opacity: 0.33;
+                transition: all 0.2s ease;
+            }
+            .caption__overlay {
+              -webkit-transform:translateY(-50%);
+                -moz-transform:translateY(-50%);
+            -ms-transform:translateY(-50%);
+            -o-transform:translateY(-50%);
+            transform:translateY(-50%);
+            }
+            p {
+//                display: block;
+              color: rgba(255,255,255,1);
+              height: 50px;
+              margin-top: 20px;
+            }
+        }
+    }
+}
+@include media-query(desk) {
+.w2 .caption__overlay-wrapper:hover .caption__overlay {
+  -webkit-transform: translateY(-37.5%);
+     -moz-transform: translateY(-37.5%);
+      -ms-transform: translateY(-37.5%);
+       -o-transform: translateY(-37.5%);
+          transform: translateY(-37.5%);
+}
+}

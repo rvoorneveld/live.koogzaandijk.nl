@@ -1,0 +1,117 @@
+.matchboard
+{
+  color: $color-kz-blue;
+  width:100%;
+  line-height:1;
+  margin-bottom:15px;
+}
+.matchboard__match
+{
+  display:block;
+  width:75%!important;
+  min-height:50px;
+}
+.matchboard__match--nomatchinfo
+{
+  display:block;
+  padding-top:15px;
+  padding-left:5px;
+}
+.matchboard__match:first-child
+{
+  margin-top:5px;
+  margin-bottom:15px;
+}
+.matchboard__box
+{
+  background:#ffffff;
+  border:1px solid $color-kz-grey;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  vertical-align: middle;
+}
+.matchboard__date
+{
+  color:$color-kz_blue;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'univers_57_condensedregular';
+  display:inline-block;
+  line-height:1;
+  vertical-align:middle;
+  .matchboard__date--day
+  {
+    font-size:3rem;
+    display:block;
+  }
+  .matchboard__date--month
+  {
+    font-size:1.2rem;
+    font-family: 'univers_65_boldregular';
+    display:block;
+  }
+}
+.matchboard__score
+{
+  font-family: 'univers_65_boldregular';
+  text-align:center;
+  display:inline-block;
+  line-height:1;
+  vertical-align:middle;
+  .matchboard__score--box
+  {
+    background:$color_kz_blue;
+    color:#ffffff;
+    margin:3px;
+    border-radius:5px;
+    font-size:1.6rem;
+    padding:3px 0;
+    .matchboard__score--home
+    {
+      border-bottom:1px solid #ffffff;
+      display:block;
+      padding-bottom:3px;
+    }
+    .matchboard__score--away
+    {
+      display:block;
+      padding-top:3px;
+    }
+  }
+}
+.matchboard__team
+{
+  color:$color-kz_black;
+  display:inline-block;
+  line-height:1;
+  vertical-align:middle;
+  .matchboard__team--home
+  {
+    line-height:1.5;
+    display:block;
+    vertical-align: middle;
+    padding-left:5px;
+  }
+  .matchboard__team--away
+  {
+    line-height:1.5;
+    display:block;
+    vertical-align: middle;
+    padding-left:5px;
+  }
+}
+.matchboard__time
+{
+  font-family: 'univers_57_condensedregular';
+  display:inline-block;
+  line-height:1;
+  vertical-align:middle;
+  .matchboard__time--start,
+  .matchboard__time--rally
+  {
+    display:block;
+    vertical-align: middle;
+  }
+}

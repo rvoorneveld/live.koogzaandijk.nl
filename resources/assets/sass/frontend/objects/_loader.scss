@@ -1,0 +1,105 @@
+$bg: #fdf6e3;
+$text: #a75f63;
+$terra-rosa: #fe576c;
+/* Mixins */
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+.loader-wrapper{
+    position:relative;
+    height: 100px;
+}
+.loader {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+}
+.loader span {
+    position: absolute;
+    text-align: center;
+    //display: inline-block;
+    //vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.2);
+    @include border-radius(50%);
+    animation: anim 2s infinite ease;
+    -webkit-animation: anim 2s infinite ease;
+}
+/* Bubbles */
+#bubble2 {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+//#bubble3 { -webkit-animation-delay: .54s; animation-delay: .54s; }
+@-webkit-keyframes anim {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+      -webkit-transform: translate(-10px, 10px);
+    -ms-transform:       translate(-10px, 10px);
+    transform:           translate(-10px, 10px);
+    }
+    50% {
+        width: 40px;
+        height: 40px;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+      -webkit-transform:translate(-20px, 0);
+    -ms-transform:      translate(-20px, 0);
+    transform:          translate(-20px, 0);
+    }
+    100% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+      -webkit-transform:translate(-10px, 10px);
+    -ms-transform:      translate(-10px, 10px);
+    transform:          translate(-10px, 10px);
+    }
+}
+@keyframes anim {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+      -webkit-transform: translate(-10px, 10px);
+    -ms-transform:       translate(-10px, 10px);
+    transform:           translate(-10px, 10px);
+    }
+    50% {
+        width: 40px;
+        height: 40px;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+      -webkit-transform:translate(-20px, 0);
+    -ms-transform:      translate(-20px, 0);
+    transform:          translate(-20px, 0);
+    }
+    100% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+      -webkit-transform:translate(-10px, 10px);
+    -ms-transform:      translate(-10px, 10px);
+    transform:          translate(-10px, 10px);
+    }
+}
