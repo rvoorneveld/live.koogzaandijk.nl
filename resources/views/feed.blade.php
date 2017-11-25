@@ -6,7 +6,7 @@
 
         <div class="grid">
 
-            <div class="grid__item one-half lap-one-half palm-one-whole"><!--
+            <div class="grid__item four-sixths lap-one-half palm-one-whole"><!--
 
                 @if (count($matches) > 0)
                     @foreach($matches as $match)
@@ -16,7 +16,7 @@
                             $month = strtoupper($objDate->format('M'));
                         @endphp
 
-                        --><div class="grid__item one-half lap-one-half palm-one-whole">
+                        --><div class="grid__item one-third lap-one-half palm-one-whole">
                             <div class="matchboard__match">
                                 <span class="matchboard__match--time">
                                     <span class="matchboard__match--rotate">{{ $match->time }}</span>
@@ -41,7 +41,7 @@
 
             --></div><!--
 
-            --><div class="grid__item one-half lap-one-half palm-one-whole"><!--
+            --><div class="grid__item two-sixths lap-one-half palm-one-whole"><!--
 
                 @foreach($messages as $message)
 
@@ -50,7 +50,7 @@
                         $link = ((! empty($message->message_link)) ? $message->message_link : 'javascript:void(0);');
                     @endphp
 
-                    --><div class="grid__item two-eighths palm-one-whole social-blocks__item">
+                    --><div class="grid__item one-third palm-one-whole social-blocks__item">
                         <div class="social-content social-content--{{$message->message_type_name}} social-content__{{ $colors[array_rand($colors)] }}">
 
                             <p class="social-content--paragraph">

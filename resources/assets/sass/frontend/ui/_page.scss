@@ -283,3 +283,27 @@ and (max-device-width : 480px) {
 .overlay-active {
     overflow: hidden;
 }
+
+.l-content-countdown
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    color: #777;
+    background: $color-kz_black;
+    width: auto;
+    height: 35px;
+    padding: 5px 12px 0 10px;
+    font-size: 18px;
+    input {
+        display: inline-block;
+        vertical-align: baseline;
+        background: $color_kz_black;
+        color: #fff;
+        text-align: right;
+        border: 0px solid;
+        width: 25px;
+        font-size: 18px;
+    }
+}
