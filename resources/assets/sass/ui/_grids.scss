@@ -47,9 +47,6 @@
 	}
 
 .grid__item {
-	@include media-query(palm) {
-		padding-left:$half-spacing-unit;
-	}
    &--newsletter {
        @include media-query(palm) {
            border-right: 0;
@@ -57,12 +54,10 @@
        }
   @include media-query(desk) {
     width: calc(50% - 15px);
-    margin-right: 30px;
   }
 
   @include media-query(lap) {
     width: calc(50% - 15px);
-    margin-right: 30px;
   }
   img {
     width: 100%;

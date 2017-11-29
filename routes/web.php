@@ -14,7 +14,9 @@
 use Illuminate\Support\Facades\Auth;
 use App\Match;
 
-Route::get('/', function () {
+Route::get('/', 'HomeController@index');
+
+/*function () {
 
     // Get Matches
     $matches = (new Match)->getThisWeeksMatches();
@@ -50,7 +52,7 @@ Route::get('/', function () {
         'colors' => $colors,
         'matches' => $matches
     ]);
-});
+});*/
 
 Route::get('/add-media','MessageController@addMedia');
 Route::post('/save-media-file','MediaController@save');

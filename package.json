@@ -1,21 +1,38 @@
 {
-  "private": true,
+  "name": "live.koogzaandijk",
+  "version": "1.0.0",
+  "description": "Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "webpack",
+    "production": "webpack -p",
+    "watch": "npm run build -- --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "root@192.168.2.32:/var/www/git/live.koogzaandijk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "gulp": "^3.9.1",
-    "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-14",
-    "laravel-elixir-vue-2": "^0.2.0",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.16.2",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jquery": "^3.2.1",
+    "jquery-countdown": "^2.2.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
   },
-  "dependencies": {
-    "masonry-layout": "^4.1.1"
-  }
+  "dependencies": {}
 }

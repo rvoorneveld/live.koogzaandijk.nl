@@ -6,7 +6,47 @@
 
         <div class="grid">
 
-            <div class="grid__item four-sixths lap-one-half palm-one-whole"><!--
+            @if ($activeMatches)
+
+                <div class="grid__item one-whole lap-one-half palm-one-whole"><!--
+
+                @foreach($activeMatches as $match)
+
+                    @php
+                        $day = ($objDate = \Carbon\Carbon::createFromFormat('Y-m-d',$match->date))->format('j');
+                        $month = strtoupper($objDate->format('M'));
+                    @endphp
+
+                    --><div class="grid__item one-half lap-one-half palm-one-whole">
+
+                        <div class="grid__item one-whole lap-one-half palm-one-whole">
+                            <div class="matchboard__match">
+                                <span class="matchboard__match--time">
+                                    <span class="matchboard__match--rotate">{{ $match->time }}</span>
+                                </span>
+                                <span class="matchboard__match--date">
+                                    <span class="matchboard__match--date__day">{{ $day }}</span>
+                                    <span class="matchboard__match--date__month">{{ $month }}</span>
+                                </span>
+                                <span class="matchboard__match--teams">
+                                    <span class="matchboard__match--teams__home">{{ $match->team_home_name }}</span>
+                                    <span class="matchboard__match--teams__away">{{ $match->team_away_name }}</span>
+                                </span>
+                                <span class="matchboard__match--score">
+                                    <span class="matchboard__match--score__home">{{ $match->team_home_score ?? 0 }}</span>
+                                    <span class="matchboard__match--score__away">{{ $match->team_away_score ?? 0 }}</span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div><!--
+
+                @endforeach
+
+                --></div>
+            @endif
+
+            <div class="grid__item one-whole lap-one-half palm-one-whole"><!--
 
                 @if (count($matches) > 0)
                     @foreach($matches as $match)
@@ -16,7 +56,7 @@
                             $month = strtoupper($objDate->format('M'));
                         @endphp
 
-                        --><div class="grid__item one-third lap-one-half palm-one-whole">
+                        --><div class="grid__item one-fifth lap-one-half palm-one-whole">
                             <div class="matchboard__match">
                                 <span class="matchboard__match--time">
                                     <span class="matchboard__match--rotate">{{ $match->time }}</span>
@@ -39,35 +79,6 @@
                     @endforeach
                 @endif
 
-            --></div><!--
-
-            --><div class="grid__item two-sixths lap-one-half palm-one-whole"><!--
-
-                @foreach($messages as $message)
-
-                    @php
-                        $media = ((! empty($message->message_media_first)) ? ' \''.$message->message_media_first.'\');"' : '');
-                        $link = ((! empty($message->message_link)) ? $message->message_link : 'javascript:void(0);');
-                    @endphp
-
-                    --><div class="grid__item one-third palm-one-whole social-blocks__item">
-                        <div class="social-content social-content--{{$message->message_type_name}} social-content__{{ $colors[array_rand($colors)] }}">
-
-                            <p class="social-content--paragraph">
-                                {{ $message->message_content }}
-                            </p>
-
-                            <div class="social-content--image-wrapper" style="background-image: url('{{ $message->message_media_first }}');"></div>
-                            <a class="social-content__link" href="{{ $link  }}" target="_blank">
-                                <div class="social-content__icon  social-content__icon--animated font-icon--standalone">
-                                    <span class="font-icon__icon font-icon__icon--social" aria-hidden="true" data-icon="{{ $message->message_type_icon }}"></span>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div><!--
-
-                @endforeach
             --></div><!--
 
         --></div>
