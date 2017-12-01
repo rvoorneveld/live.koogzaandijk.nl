@@ -1,214 +1,113 @@
-@font-face
-{
-	font-family: 'icons-default';
-	src:url('/fonts/icomoon.eot');
-	src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/icomoon.woff') format('woff'),
-		url('/fonts/icomoon.ttf') format('truetype'),
-		url('/fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+body {
+    font-family: Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 100%;
 }
 
-body
-{
-  font-family: Tahoma, sans-serif;
-  font-weight: normal;
+body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
+    font-size-adjust: 0.5;
 }
 
-h1, h2, h3, h4, h5, h6  {
-  letter-spacing: .04em;
-  margin-bottom: 1.2em;
-  font-weight: 400;
-  a {
-    text-decoration: none;
-  }
+h1 {
+    font-size: 2em;
+    /* 2x body copy size = 32px */
+    line-height: 1.25;
+    /* 45px / 36px */
 }
 
-h1  {
-  @include font-size(36px);
-  line-height: 1.2;
-}
-
-
-//Headers
-
-.alpha   { @include font-size(36px); }
-.beta    { @include font-size(30px); }
-.gamma   { @include font-size(24px); }
-.delta   { @include font-size(20px); }
-.epsilon { @include font-size(14px); }
-
-
-p  {
-  font-family: $secondary-font-family !important;
-}
-
-::selection  {
-  background: $brand-color-yellow;
-}
-
-.quote-source  {
-    @include media-query(palm) {
-        font-size: 14px !important;
+@media (min-width: 43.75em) {
+    h1 {
+        font-size: 2.5em;
+        /* 2.5x body copy size = 40px */
+        line-height: 1.125;
     }
 }
 
-h1.intro  {
-  text-align: center;
-  margin-top:1rem;
-  margin-bottom: .2rem;
-  font-weight: bold;
-  line-height: 1.45!important;
-}
-
-.hotelpage  {
-  font-size: 1.5em;
-  line-height: 1;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  text-align: center;
-  
-}
-
-.subheading  {
-  font-family: $secondary-font-family;
-  font-style: italic;
-  font-size: 1.35rem;
-  text-align: center;
-  font-weight: 400;
-  line-height: 1.35rem;
-  margin-bottom: 1rem;
-}
-
-.fancy  {
-  overflow: hidden !important;
-  line-height: 1.2 !important;
-  text-align: center;
-  margin-top: .85rem;
-  margin-bottom: .85rem;
-  font-weight: 400;
-  height: 1.4em;
-
-  @include media-query(desk) {
-      margin-top: 1.85rem;
-      margin-bottom: 1.85rem;
-  }
-
-  span  {
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        height: 15px;
-        width: 600px;
-        padding: 5px 0;
-        border-bottom: 1px solid #dbdbdb;
-      }
-
-      &:before  {
-        right: 100%;
-        margin-right: 15px;
-      }
-
-      &:after  {
-        left: 100%;
-        margin-left: 15px;
-      }
-  }
-
-  &--collapsed  {
-      cursor:pointer;
-
-      span:after {
-         margin-left: 35px;
-      }
-
-      &:after {
-        content: "";
-        opacity: 1;
-           border-color: transparent #111;
-           border-style: solid;
-           border-width: 0.25em 0 0.25em 0.35em;
-           margin: 7px  10px;
-           display: inline-block;
-           vertical-align: bottom;
-           position: relative;
-           line-height: 1em;
-           @include vendor(transition, all 0.3s ease);
-           @include vendor(transition, opacity 0.4s ease);
-           -webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-ms-transform: rotate(90deg);-o-transform: rotate(90deg);transform: rotate(90deg);
-       }
-   }
-
-  &--expanded {
-        cursor:pointer;
-        span:after {
-            margin-left: 35px;
-        }
-        &:after {
-            opacity: 1;
-            content: "";
-            border-color: transparent #111;
-            border-style: solid;
-            border-width: 0.25em 0 0.25em 0.35em;
-            margin: 7px  10px;
-            display: inline-block;
-            vertical-align: bottom;
-            position: relative;
-            line-height: 1em;
-            @include vendor(transition, all 0.3s ease);
-            @include vendor(transition, opacity 0.4s ease);
-            -webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);-ms-transform: rotate(-90deg);-o-transform: rotate(90deg);transform: rotate(-90deg);
-        }
+@media (min-width: 56.25em) {
+    h1 {
+        font-size: 3em;
+        /* 3x body copy size = 48px */
+        line-height: 1.05;
+        /* keep to a multiple of the 20px line height and something more appropriate for display headings */
     }
 }
 
-h3.newsletter {
-  text-align: center;
+h2 {
+    font-size: 1.625em;
+    /* 1.625x body copy size = 26px */
+    line-height: 1.15384615;
+    /* 30px / 26px */
 }
 
-span.price {
-  display:inline-block;
-  padding: 12px 0;
+@media (min-width: 43.75em) {
+    h2 {
+        font-size: 2em;
+        /* 2x body copy size = 32px */
+        line-height: 1.25;
+    }
 }
 
-.location {
-  line-height: 1.4;
-  font-size: .85rem;
-
-  a  {
-    line-height: 2.1rem;
-    opacity: 0.7;
-    text-decoration: none;
-  }
-
-  svg {
-    margin-bottom: 0;
-  }
+@media (min-width: 56.25em) {
+    h2 {
+        font-size: 2.25em;
+        /* 2.25x body copy size = 36px */
+        line-height: 1.25;
+    }
 }
 
-.location--overview {
-  margin-bottom: $half-spacing-unit;
+h3 {
+    font-size: 1.375em;
+    /* 1.375x body copy size = 22px */
+    line-height: 1.13636364;
+    /* 25px / 22px */
 }
 
-.blocktitle
-{
-  padding: 0 0 .6em 0;
+@media (min-width: 43.75em) {
+    h3 {
+        font-size: 1.5em;
+        /* 1.5x body copy size = 24px */
+        line-height: 1.25;
+    }
 }
 
-h4
-{
-  font-size: 1.1rem;
+@media (min-width: 56.25em) {
+    h3 {
+        font-size: 1.75em;
+        /* 1.75x body copy size = 28px */
+        line-height: 1.25;
+    }
 }
 
-h2.intro
-{
-  text-align: center;
-  line-height: 1.45;
+h4 {
+    font-size: 1.125em;
+    /* 1.125x body copy size = 18px */
+    line-height: 1.11111111;
+}
+
+@media (min-width: 43.75em) {
+    h4 {
+        line-height: 1.22222222;
+        /* (22px / 18px */
+    }
+}
+
+blockquote {
+    font-size: 1.25em;
+    /* 20px / 16px */
+    line-height: 1.25;
+    /* 25px / 20px */
+}
+
+@media (min-width: 43.75em) {
+    blockquote {
+        font-size: 1.5em;
+        /* 24px / 16px = */
+        line-height: 1.45833333;
+        /* 35px / 24px */
+    }
+}
+
+.bordered {
+    padding-bottom: $half-spacing-unit;
+    border-bottom: 1px solid $color_kz_black;
 }

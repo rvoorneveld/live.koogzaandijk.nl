@@ -1,4 +1,9 @@
 require('../sass/app.scss');
-global.jQuery = require('jquery');
+window.jQuery = require('jquery');
 require('jquery-countdown');
-require('./Countdown');
+require('@fancyapps/fancybox');
+
+jQuery(document).ready(function(){
+    require('./Countdown');
+    require('./Fancybox');
+});

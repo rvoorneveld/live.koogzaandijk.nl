@@ -8,8 +8,7 @@
 
             @if ($activeMatches)
 
-                <div class="grid__item one-whole lap-one-half palm-one-whole"><!--
-
+                <div class="grid__item one-whole"><!--
                 @foreach($activeMatches as $match)
 
                     @php
@@ -17,24 +16,28 @@
                         $month = strtoupper($objDate->format('M'));
                     @endphp
 
-                    --><div class="grid__item one-half lap-one-half palm-one-whole">
+                    --><div class="grid__item grid__item--no-padding one-third lap-one-half palm-one-whole">
 
                         <div class="grid__item one-whole lap-one-half palm-one-whole">
                             <div class="matchboard__match">
-                                <span class="matchboard__match--time">
-                                    <span class="matchboard__match--rotate">{{ $match->time }}</span>
-                                </span>
-                                <span class="matchboard__match--date">
-                                    <span class="matchboard__match--date__day">{{ $day }}</span>
-                                    <span class="matchboard__match--date__month">{{ $month }}</span>
+                                <a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_home_id }}" data-team-name="{{ $match->team_home_name }}" data-team-type="home" class="matchboard__manipulate matchboard__manipulate--home js-score-create">+</a>
+                                <a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_away_id }}" data-team-name="{{ $match->team_away_name }}" data-team-type="away" class="matchboard__manipulate matchboard__manipulate--away js-score-create">+</a>
+                                <span class="matchboard__match--time matchboard__match--live">
+                                    <span class="matchboard__match--rotate matchboard__match--rotate__left">&#149;&nbsp;LIVE</span>
+                                    <span class="matchboard__match--rotate matchboard__match--rotate__right">{{ $match->time }}</span>
                                 </span>
                                 <span class="matchboard__match--teams">
-                                    <span class="matchboard__match--teams__home">{{ $match->team_home_name }}</span>
-                                    <span class="matchboard__match--teams__away">{{ $match->team_away_name }}</span>
+                                    <span class="matchboard__match--teams__home soft--left">{{ $match->team_home_name }}</span>
+                                    <span class="matchboard__match--teams__away soft--left">{{ $match->team_away_name }}</span>
                                 </span>
                                 <span class="matchboard__match--score">
-                                    <span class="matchboard__match--score__home">{{ $match->team_home_score ?? 0 }}</span>
-                                    <span class="matchboard__match--score__away">{{ $match->team_away_score ?? 0 }}</span>
+                                    <span class="matchboard__match--score__home">
+                                        {{ $match->team_home_score ?? 0 }}
+
+                                    </span>
+                                    <span class="matchboard__match--score__away">
+                                        {{ $match->team_away_score ?? 0 }}
+                                    </span>
                                 </span>
                             </div>
                         </div>
@@ -46,7 +49,7 @@
                 --></div>
             @endif
 
-            <div class="grid__item one-whole lap-one-half palm-one-whole"><!--
+            <div class="grid__item soft--top one-whole lap-one-half palm-one-whole"><!--
 
                 @if (count($matches) > 0)
                     @foreach($matches as $match)
@@ -129,10 +132,4 @@
         })();
     </script>-->
 
-@stop
-
-@section('addmessage')
-    <a href="/add-media/" class="btn btn--main btn--center">
-        Bericht toevoegen
-    </a>
 @stop

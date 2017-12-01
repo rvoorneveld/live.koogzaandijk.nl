@@ -26,6 +26,12 @@
  *		- {delete}				for properties that can be deleted, mainly used for test purposes
  *		- {magic}				for magic numbers, in need of non magic fix
  */
+
+/**
+Libraries
+ */
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.css";
+
 //@import "custom-mixins";
 //@import "zindex";
 
@@ -67,7 +73,7 @@
 
 //@import "ui/beautons";
 //@import "ui/flyout";
-//@import "ui/grids";
+@import "ui/grids";
 //@import "ui/island";
 //@import "ui/nav";
 //@import "ui/split";
@@ -123,5 +129,5 @@
 //@import "ui/states";
 //@import "ui/svg-icon";
 //@import "ui/topslider";
-//@import "ui/typography";
+@import "ui/typography";
 //@import "ui/infowindow";

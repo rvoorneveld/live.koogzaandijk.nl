@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "webpack",
     "production": "webpack -p",
-    "watch": "npm run build -- --watch"
+    "watch": "npm run dev -- --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.2.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

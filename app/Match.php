@@ -33,14 +33,21 @@ class Match extends Model
             ->select('matches.*')
             ->where('year', Carbon::now()->year);
 
-        if (null !== $excludeMatches && true === \is_array($matches = $excludeMatches->all()) && count($matches) > 0) {
+        if (null !== $excludeMatches && true === \is_array($matches = $excludeMatches->all()) && \count($matches) > 0) {
             $query->whereRaw('matches_id NOT IN ('.implode(',', $matches).')');
         }
 
         $query->where('week', Carbon::now()->weekOfYear)
         ->orderBy('date', 'asc')
-        ->orderBy('time', 'asc')
-        ->get();
+        ->orderBy('time', 'asc');
+
+        return $query->get();
+    }
+
+    public function getMatch(int $id)
+    {
+        return DB::table('matches')
+            ->where('matches_id', $id)->first();
     }
 
 }
