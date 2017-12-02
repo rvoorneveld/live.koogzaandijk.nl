@@ -8,7 +8,7 @@
 
             @if ($activeMatches)
 
-                <div class="grid__item one-whole"><!--
+                <div class="grid__item one-whole grid__item--no-padding"><!--
                 @foreach($activeMatches as $match)
 
                     @php
@@ -49,7 +49,7 @@
                 --></div>
             @endif
 
-            <div class="grid__item soft--top one-whole lap-one-half palm-one-whole"><!--
+            <div class="grid__item soft--top one-whole lap-one-half palm-one-whole grid__item--no-padding"><!--
 
                 @if (count($matches) > 0)
                     @foreach($matches as $match)
