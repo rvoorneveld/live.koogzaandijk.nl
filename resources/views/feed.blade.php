@@ -20,8 +20,8 @@
 
                         <div class="grid__item one-whole lap-one-half palm-one-whole">
                             <div class="matchboard__match">
-                                <a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_home_id }}" data-team-name="{{ $match->team_home_name }}" data-team-type="home" class="matchboard__manipulate matchboard__manipulate--home js-score-create">+</a>
-                                <a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_away_id }}" data-team-name="{{ $match->team_away_name }}" data-team-type="away" class="matchboard__manipulate matchboard__manipulate--away js-score-create">+</a>
+                                <!--<a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_home_id }}" data-team-name="{{ $match->team_home_name }}" data-team-type="home" class="matchboard__manipulate matchboard__manipulate--home js-score-create">+</a>
+                                <a href="javascript:;" data-match-id="{{ $match->matches_id }}" data-team-id="{{ $match->team_away_id }}" data-team-name="{{ $match->team_away_name }}" data-team-type="away" class="matchboard__manipulate matchboard__manipulate--away js-score-create">+</a>-->
                                 <span class="matchboard__match--time matchboard__match--live">
                                     <span class="matchboard__match--rotate matchboard__match--rotate__left">&#149;&nbsp;LIVE</span>
                                     <span class="matchboard__match--rotate matchboard__match--rotate__right">{{ $match->time }}</span>
