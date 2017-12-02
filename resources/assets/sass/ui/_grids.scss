@@ -85,3 +85,8 @@
 .grid__item--no-padding {
     padding:0!important;
 }
+.grid__item {
+    .grid__item {
+        padding-left:0;
+    }
+}
