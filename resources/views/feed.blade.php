@@ -6,9 +6,9 @@
 
         <div class="grid">
 
-            @if ($activeMatches)
+            @if (false === empty($activeMatches))
 
-                <div class="grid__item one-whole grid__item--no-padding"><!--
+                <div class="grid__item soft--top one-whole grid__item--no-padding"><!--
                 @foreach($activeMatches as $match)
 
                     @php
@@ -49,36 +49,64 @@
                 --></div>
             @endif
 
-            <div class="grid__item soft--top one-whole lap-one-half palm-one-whole grid__item--no-padding"><!--
+            @php
+                $softTop = (false === empty($activeMatches)) ? ' soft--top' : '';
+            @endphp
+
+            <div class="grid__item{{ $softTop }} one-whole grid__item--no-padding"><!--
 
                 @if (count($matches) > 0)
-                    @foreach($matches as $match)
+
+                    @foreach($matches as $strPoule => $arrMatches)
 
                         @php
-                            $day = ($objDate = \Carbon\Carbon::createFromFormat('Y-m-d',$match->date))->format('j');
-                            $month = strtoupper($objDate->format('M'));
+                            $pouleWidth = ('Senioren' === $strPoule) ? 'four-eighths' : 'two-eighths';
+                            $matchWidth = ('Senioren' === $strPoule) ? 'one-quarter' : 'one-half';
                         @endphp
 
-                        --><div class="grid__item one-fifth lap-one-half palm-one-whole">
-                            <div class="matchboard__match">
-                                <span class="matchboard__match--time">
-                                    <span class="matchboard__match--rotate">{{ $match->time }}</span>
-                                </span>
-                                    <span class="matchboard__match--date">
-                                    <span class="matchboard__match--date__day">{{ $day }}</span>
-                                    <span class="matchboard__match--date__month">{{ $month }}</span>
-                                </span>
-                                    <span class="matchboard__match--teams">
-                                    <span class="matchboard__match--teams__home">{{ $match->team_home_name }}</span>
-                                    <span class="matchboard__match--teams__away">{{ $match->team_away_name }}</span>
-                                </span>
-                                    <span class="matchboard__match--score">
-                                    <span class="matchboard__match--score__home">{{ $match->team_home_score ?? 0 }}</span>
-                                    <span class="matchboard__match--score__away">{{ $match->team_away_score ?? 0 }}</span>
-                                </span>
-                            </div>
-                        </div><!--
+                        --><div class="grid__item grid__item--no-padding {{ $pouleWidth }} lap-one-whole palm-one-whole">
+                                <h3 class="heading--fancy">{{ $strPoule }}</h3><!--
 
+                        @foreach($arrMatches as $key => $match)
+
+                            @php
+                                $day = ($objDate = \Carbon\Carbon::createFromFormat('Y-m-d',$match->date))->format('j');
+                                $month = strtoupper($objDate->format('M'));
+                                $grayscale = false === $match->isToday ? ' matchboard__match--grayscale' : '';
+                            @endphp
+
+                            --><div class="grid__item {{ $matchWidth }} lap-one-whole palm-one-whole">
+                                    <div class="matchboard__match{{ $grayscale }}">
+                                        <span class="matchboard__match--time">
+                                            <span class="matchboard__match--rotate">
+                                                @if(true === $match->isToday)
+                                                    {{ $match->time }}
+                                                @elseif(true === $match->isSaturday)
+                                                    zaterdag
+                                                @elseif(true === $match->isSunday)
+                                                    zondag
+                                                @else
+                                                    volg.week
+                                                @endif
+                                            </span>
+                                        </span>
+                                        <!--<span class="matchboard__match--date">
+                                            <span class="matchboard__match--date__day">{{ $day }}</span>
+                                            <span class="matchboard__match--date__month">{{ $month }}</span>
+                                        </span>-->
+                                            <span class="matchboard__match--teams">
+                                            <span class="matchboard__match--teams__home">{{ $match->team_home_name }}</span>
+                                            <span class="matchboard__match--teams__away">{{ $match->team_away_name }}</span>
+                                        </span>
+                                            <span class="matchboard__match--score">
+                                            <span class="matchboard__match--score__home">{{ $match->team_home_score ?? 0 }}</span>
+                                            <span class="matchboard__match--score__away">{{ $match->team_away_score ?? 0 }}</span>
+                                        </span>
+                                    </div>
+                                </div><!--
+
+                        @endforeach
+                            --></div><!--
                     @endforeach
                 @endif
 

@@ -107,7 +107,17 @@ blockquote {
     }
 }
 
-.bordered {
-    padding-bottom: $half-spacing-unit;
-    border-bottom: 1px solid $color_kz_black;
+.heading--fancy {
+  color: $color_kz_black;
+  font-family: georgia, serif;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-bottom: 2px dotted $color_kz_black;
+  padding: 5px 30px;
+  text-align: center;
+  margin-left: $base-spacing-unit;
+  margin-bottom: $half-spacing-unit;
+  position: relative;
 }

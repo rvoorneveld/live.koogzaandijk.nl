@@ -30,7 +30,7 @@ class Match extends Model
     public function getForThisWeek($excludeMatches = null)
     {
         $query = DB::table('matches')
-            ->select('matches.*')
+            ->selectRaw('`matches`.`*`, LEFT(`poule_code`, 1) as `poule`')
             ->where('year', Carbon::now()->year);
 
         if (null !== $excludeMatches && true === \is_array($matches = $excludeMatches->all()) && \count($matches) > 0) {
