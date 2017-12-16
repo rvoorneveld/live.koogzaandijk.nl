@@ -29,7 +29,6 @@ class HomeController extends Controller
                 $match->isToday = ($objMatchDate = Carbon::createFromFormat('Y-m-j', $match->date))->isToday();
                 $match->isSaturday = $objMatchDate->isSaturday();
                 $match->isSunday = $objMatchDate->isSunday();
-                $match->isNextWeek = $objMatchDate->isNextWeek();
                 $arrMatchesByPoule[$match->category][] = $match;
             }
             ksort($arrMatchesByPoule);
