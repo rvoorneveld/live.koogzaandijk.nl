@@ -16,7 +16,7 @@ class HomeController extends Controller
             && true === \is_array($matches)) {
             foreach ($matches as $match) {
                 switch (true) {
-                    case true === \in_array($match->poule, ['F', 'E', 'D'], true):
+                    case true === \in_array($match->poule, ['F', 'E', 'D', 'C'], true):
                         $match->category = 'Jeugd';
                         break;
                     case true === \in_array($match->poule, ['A', 'B'], true):
