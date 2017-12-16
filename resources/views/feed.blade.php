@@ -86,7 +86,7 @@
                                                 @elseif(true === $match->isSunday)
                                                     zondag
                                                 @else
-                                                    {{ $day }} {{ $month }}
+                                                    {{ $day }}&nbsp;{{ $month }}
                                                 @endif
                                             </span>
                                         </span>
