@@ -86,7 +86,7 @@
                                                 @elseif(true === $match->isSunday)
                                                     zondag
                                                 @else
-                                                    volg.week
+                                                    {{ $day }} {{ $month }}
                                                 @endif
                                             </span>
                                         </span>
