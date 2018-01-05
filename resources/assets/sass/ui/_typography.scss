@@ -115,9 +115,9 @@ blockquote {
   font-weight: normal;
   text-transform: uppercase;
   border-bottom: 2px dotted $color_kz_black;
-  padding: 5px 30px;
+  padding: 0 30px;
   text-align: center;
-  margin-left: $base-spacing-unit;
+  margin-left: $half-spacing-unit;
   margin-bottom: $half-spacing-unit;
   position: relative;
 }
