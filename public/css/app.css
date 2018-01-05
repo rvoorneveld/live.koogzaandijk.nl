@@ -2364,7 +2364,6 @@ label,
  * Grid wrapper
  */
 .grid {
-  margin-left: -30px;
   list-style: none;
   margin-bottom: 0; }
 
@@ -3840,6 +3839,69 @@ Libraries
  */
 /* custom objects */
 /* import all css related to external libraries here */
+#slides {
+  position: relative; }
+
+#slides .slides-container {
+  display: none; }
+
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%; }
+
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%; }
+
+.slides-navigation a {
+  position: absolute;
+  display: block; }
+
+.slides-navigation a.prev {
+  left: 0; }
+
+.slides-navigation a.next {
+  right: 0; }
+
+.slides-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%; }
+
+.slides-pagination a {
+  border: 2px solid #222;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+  margin: 2px;
+  overflow: hidden;
+  text-indent: -100%; }
+
+.slides-pagination a.current {
+  background: #222; }
+
 /* inuit modifiers */
 .grid--promo-overlay {
   margin-bottom: 30px; }
@@ -3866,7 +3928,7 @@ Libraries
   text-align: center; }
 
 .grid__item {
-  /*padding-left: $half-spacing-unit;*/ }
+  padding-left: 15px; }
 
 .grid__item--viewtypes {
   margin-top: 12px;
@@ -3936,13 +3998,14 @@ a {
 .l-wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
+  padding: 15px;
   padding-bottom: 0; }
   @media only screen and (max-width: 749px) {
     .l-wrapper {
-      padding: 15px; } }
+      padding: 7.5px; } }
 
 .l-wrapper--content {
+  padding-left: 0;
   padding-top: 0;
   position: relative; }
   @media only screen and (max-width: 749px) {
