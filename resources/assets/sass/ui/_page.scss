@@ -36,14 +36,15 @@ a
     @extend .cf;
     margin-left: auto;
     margin-right: auto;
-    padding: $base-spacing-unit;
+    padding: $half-spacing-unit;
     padding-bottom: 0;
     @include media-query(palm)
     {
-        padding: $half-spacing-unit;
+        padding: $half-spacing-unit / 2;
     }
 }
 .l-wrapper--content {
+    padding-left: 0;
     padding-top: 0;
     position: relative;
     @include media-query(palm)
