@@ -16,14 +16,14 @@ class HomeController extends Controller
             && true === \is_array($matches)) {
             foreach ($matches as $match) {
                 switch (true) {
-                    case true === \in_array($match->poule, ['F', 'E', 'D', 'C'], true):
-                        $match->category = 'Jeugd';
+                    case true === \in_array($match->poule, ['F', 'E', 'D',], true):
+                        $match->category = 1;
                         break;
-                    case true === \in_array($match->poule, ['A', 'B'], true):
-                        $match->category = 'Junioren';
+                    case true === \in_array($match->poule, ['A', 'B', 'C',], true):
+                        $match->category = 2;
                         break;
                     default:
-                        $match->category = 'Senioren';
+                        $match->category = 3;
                         break;
                 }
                 $match->isToday = ($objMatchDate = Carbon::createFromFormat('Y-m-j', $match->date))->isToday();

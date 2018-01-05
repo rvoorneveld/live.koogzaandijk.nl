@@ -60,8 +60,9 @@
                     @foreach($matches as $strPoule => $arrMatches)
 
                         @php
-                            $pouleWidth = ('Junioren' === $strPoule) ? 'two-eighths' : 'three-eighths';
-                            $matchWidth = ('Junioren' === $strPoule) ? 'one-half' : 'one-third';
+                            $pouleWidth = (2 === $strPoule) ? 'two-eighths' : 'three-eighths';
+                            $matchWidth = (2 === $strPoule) ? 'one-half' : 'one-third';
+                            $strPoule = str_replace([1, 2, 3], ['F/E/D', 'C/B/A', 'Senioren',], $strPoule);
                         @endphp
 
                         --><div class="grid__item grid__item--no-padding {{ $pouleWidth }} lap-one-whole palm-one-whole">
