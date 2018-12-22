@@ -1,0 +1,11 @@
+.skippr-nav-container {
+  -moz-box-shadow: inset 0 0 4px #808080;
+  -webkit-box-shadow: inset 0 0 4px #808080;
+  box-shadow: inset 0 0 4px #808080;
+}
+.skippr-nav-element {
+  background-color: rgba(0, 82, 155, 0.5);
+}
+.skippr-nav-element:hover, .skippr-nav-element-active {
+  background-color:$color_kz_blue;
+}
