@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('/clubs', 'ClubsController@store');
 Route::get('/clubs', 'ClubsController@index');
 Route::get('/club/{club}', 'ClubsController@show');
