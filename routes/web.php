@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/clubs', 'ClubsController@store');
 Route::get('/clubs', 'ClubsController@index');
 Route::get('/club/{club}', 'ClubsController@show');
+
+Route::post('/teams', 'TeamsController@store');
+Route::get('/team/{team}', 'TeamsController@show');
