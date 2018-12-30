@@ -22,7 +22,7 @@ class ClubsController extends Controller
 
     public function store()
     {
-        $attributes = request()->validate(['name' => 'required']);
+        $attributes = request()->validate(['name' => 'required',]);
 
         Club::create($attributes);
 
