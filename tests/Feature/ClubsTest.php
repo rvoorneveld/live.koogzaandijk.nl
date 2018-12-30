@@ -32,7 +32,7 @@ class ClubsTest extends TestCase
         $this->post('clubs', $attributes)->assertSessionHasErrors('name');
     }
 
-    public function testUserCanViewAProject(): void
+    public function testUserCanViewAClub(): void
     {
         $this->withoutExceptionHandling();
 
