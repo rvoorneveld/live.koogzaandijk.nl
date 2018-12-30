@@ -34,8 +34,6 @@ class ClubsTest extends TestCase
 
     public function testUserCanViewAClub(): void
     {
-        $this->withoutExceptionHandling();
-
         $club = factory(Club::class)->create();
 
         $this->get($club->path())->assertSee($club->name);
