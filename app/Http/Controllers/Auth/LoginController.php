@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/clubs';
 
     /**
      * Create a new controller instance.
@@ -36,4 +36,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectTo()
+    {
+        if (($clubs = auth()->user()->clubs)->count() === 1) {
+            return $clubs->first()->path();
+        }
+
+        return $this->redirectTo;
+    }
+
 }

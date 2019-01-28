@@ -1,11 +1,9 @@
-<h1>{{ $club->name }}</h1>
-<ul>
-@forelse($club->teams as $team)
-    <li>
-        {{ $team->name }}
-    </li>
-    @empty
-    <li>No teams yet</li>
+@extends('layouts.app')
 
-@endforelse
-</ul>
+@section('content')
+    <div style="display: flex; align-items: center;">
+        <h1 style="margin-right: auto;">{{ $club->name }}</h1>
+    </div>
+
+    <a href="/clubs">Go back</a>
+@endsection
