@@ -17,11 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth',], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('/clubs', 'ClubsController@store');
+    Route::get('/clubs', 'ClubsController@index');
+    Route::get('/clubs/create', 'ClubsController@create');
+    Route::get('/clubs/{club}', 'ClubsController@show');
+    Route::post('/clubs/{club}/teams', 'TeamsController@store');
+    Route::get('/clubs/{club}/teams', 'TeamsController@show');
 
-Route::post('/clubs', 'ClubsController@store');
-Route::get('/clubs', 'ClubsController@index');
-Route::get('/club/{club}', 'ClubsController@show');
-
-Route::post('/teams', 'TeamsController@store');
-Route::get('/team/{team}', 'TeamsController@show');
+////    Route::post('/te reate', 'MembersController@create');
+});

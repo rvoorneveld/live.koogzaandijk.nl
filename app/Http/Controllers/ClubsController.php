@@ -10,13 +10,22 @@ class ClubsController extends Controller
 
     public function index()
     {
-        $clubs = Club::all();
+        $clubs = auth()->user()->clubs;
 
         return view('clubs.index', compact('clubs'));
     }
 
+    public function create()
+    {
+        return view('clubs.create');
+    }
+
     public function show(Club $club)
     {
+        if (false === $club->users->contains('id', auth()->user()->id)) {
+            abort(403);
+        }
+
         return view('clubs.show', compact('club'));
     }
 
@@ -24,9 +33,10 @@ class ClubsController extends Controller
     {
         $attributes = request()->validate(['name' => 'required',]);
 
-        Club::create($attributes);
+        $club = club::create($attributes);
+        $club->users()->attach(auth()->user()->id);
 
-        return  redirect('/clubs');
+        return redirect('/clubs');
     }
 
 }
